@@ -1,2 +1,2 @@
-# Data_Science.DEPI
+# Data_Science(Projects).DEPI
 ## All Projects
