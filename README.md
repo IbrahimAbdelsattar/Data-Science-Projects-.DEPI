@@ -18,13 +18,12 @@ This project focuses on developing a **machine learning model** to predict emplo
 ## Team Members and Roles
 | Team Member                     | Role                          |
 |---------------------------------|-------------------------------|
-| Ibrahim Abdel-sattar            | Milestone 1 & 2               |
+| Ibrahim Abdel-sattar            | Milestone 1 & 2 & 5           |
 | Ali Ahmed Mahmoud Madian        | Milestone 1 & 2               |
 | Ahmed Tarek Aboelnaga           | Milestone 3                   |
 | Reem Ashraf Ahmed Mohamed       | Milestone 3                   |
 | Yousif Saad Seddiek             | Milestone 4                   |
 | Mohamed Abd el-meged El-batal   | Milestone 4                   |
-| All Team Members                | Milestone 5                   |
 
 ---
 
