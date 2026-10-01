@@ -28,6 +28,36 @@ The app expects `final_model.pkl`, which is not committed in the current checkou
 
 Power BI `.pbix` files require Power BI Desktop. Notebook training imports additional ML packages beyond the Streamlit runtime list. Predictions are experimental and should not be treated as established employee retention outcomes. `streamlit.txt` contains a hosted URL rather than package requirements; the installation command installs the source app's core runtime packages.
 
+## UML diagrams
+
+### Main workflow
+
+The repository combines attrition experiments, dashboards, and a Streamlit inference app. The final_model.pkl handoff is required by the app but the file is missing.
+
+```mermaid
+sequenceDiagram
+    participant Data as Attrition CSV
+    participant Notebook as Training notebook
+    participant Models as Classifier experiments
+    participant Artifact as final_model.pkl
+    participant App as Streamlit app
+    Notebook->>Data: Read and prepare employee records
+    Data-->>Notebook: Attrition features and labels
+    loop Candidate models
+        Notebook->>Models: Fit and evaluate
+        Models-->>Notebook: Predictions and metrics
+    end
+    Note over Notebook,Models: Notebook also records experiments with MLflow
+    App->>Artifact: Load final_model.pkl
+    alt Matching artifact supplied
+        Artifact-->>App: Fitted model
+        App->>App: Prepare form inputs and predict attrition
+    else Current checkout
+        Artifact-->>App: File unavailable
+        Note over Artifact,App: Inference startup is blocked
+    end
+```
+
 ## Getting started
 
 ```bash
